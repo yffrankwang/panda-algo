@@ -7,6 +7,6 @@
 	</path>
 
 	<!-- build -->
-	<import file="../panda-java/ant/panda-build.xml"/>
+	<import file="../panda/ant/panda-build.xml"/>
 
 </project>
