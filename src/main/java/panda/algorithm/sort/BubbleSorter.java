@@ -4,8 +4,6 @@ import java.util.List;
 
 /**
  * 
- * @author yf.frank.wang@gmail.com
- *
  */
 public class BubbleSorter extends Sorter {
 	public void sort(List<?> list, int from, int to) {

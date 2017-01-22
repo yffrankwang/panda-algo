@@ -7,7 +7,6 @@ import java.util.List;
  * TreeNode
  *
  * @param <T> the value type
- * @author yf.frank.wang@gmail.com
  */
 public class TreeNode<T> {
 	private int level = 0;

@@ -13,7 +13,6 @@ import org.junit.runners.Parameterized.Parameters;
 
 
 /**
- * @author yf.frank.wang@gmail.com
  */
 @RunWith(value = Parameterized.class)
 public class PermutaterTest {

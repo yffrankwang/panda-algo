@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * 
- * @author yf.frank.wang@gmail.com
  *
  */
 public class Combinater {

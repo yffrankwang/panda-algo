@@ -3,7 +3,6 @@ package panda.algorithm;
 
 /**
  * 
- * @author yf.frank.wang@gmail.com
  *
  */
 public class Permutater {

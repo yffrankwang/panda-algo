@@ -6,7 +6,6 @@ import panda.algorithm.sort.BubbleSorter;
 import junit.framework.TestCase;
 
 /**
- * @author yf.frank.wang@gmail.com
  */
 public class BubbleSorterTest extends TestCase {
 	
