@@ -8,7 +8,7 @@ import java.util.List;
 public class BubbleSorter extends Sorter {
 	public void sort(List<?> list, int from, int to) {
 		boolean change = true;
-		for (int i = to - 1; i >= from + 1 && change; i--) {
+		for (int i = to - 1; i > from && change; i--) {
 			change = false;
 			for (int j = from; j < i; j++) {
 				if (compare(list, j, j + 1) > 0) {
