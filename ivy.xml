@@ -9,7 +9,6 @@
 	</publications>
 	<dependencies>
 		<!-- RUN -->
-		<dependency org="log4j" name="log4j" rev="1.2.17" conf="run->master,sources" />
 
 		<!-- TOOL -->
 		<dependency org="junit" name="junit" rev="4.11" conf="tool->*"/>
