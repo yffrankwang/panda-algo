@@ -36,6 +36,7 @@ public class Combinater {
 
 	/**
 	 * C(n, m)
+	 * @return count
 	 */
 	public long count() {
 		long count = 1;
@@ -50,6 +51,7 @@ public class Combinater {
 	
 	/**
 	 * C(n, m)
+	 * @return combinate count
 	 */
 	public long combinate() {
 		count = 0;
