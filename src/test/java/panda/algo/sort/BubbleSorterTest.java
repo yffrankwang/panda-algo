@@ -1,9 +1,9 @@
-package panda.algorithm.sort;
+package panda.algo.sort;
 
 import java.util.Random;
 
-import panda.algorithm.sort.BubbleSorter;
 import junit.framework.TestCase;
+import panda.algo.sort.BubbleSorter;
 
 /**
  */

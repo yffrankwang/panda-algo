@@ -1,4 +1,4 @@
-package panda.algorithm;
+package panda.algo;
 
 import java.util.Arrays;
 

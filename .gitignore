@@ -1,2 +1,9 @@
+._*
+.#*
+.settings
+/.classpath
+/.project
 /lib
+/log
 /out
+/*.log

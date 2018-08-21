@@ -1,4 +1,4 @@
-package panda.algorithm;
+package panda.algo;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import panda.algo.Permutater;
 
 
 /**

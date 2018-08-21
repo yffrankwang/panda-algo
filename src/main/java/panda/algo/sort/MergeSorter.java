@@ -1,4 +1,4 @@
-package panda.algorithm.sort;
+package panda.algo.sort;
 
 import java.util.ArrayList;
 import java.util.List;

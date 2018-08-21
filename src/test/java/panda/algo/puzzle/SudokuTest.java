@@ -1,4 +1,4 @@
-package panda.algorithm.puzzle;
+package panda.algo.puzzle;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,6 +15,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import panda.algo.puzzle.Sudoku;
 
 @RunWith(value = Parameterized.class)
 public class SudokuTest {

@@ -1,4 +1,4 @@
-package panda.algorithm.puzzle;
+package panda.algo.puzzle;
 
 
 /**
