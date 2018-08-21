@@ -1,4 +1,4 @@
-panda-algorithm
+panda-algo
 ===============
 
 Java Algorithm Collections
