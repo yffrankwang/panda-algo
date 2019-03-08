@@ -86,13 +86,6 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>panda</id>
-			<url>https://pandafw.github.io/repos/panda/</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<!-- Panda -->
 		<dependency>
