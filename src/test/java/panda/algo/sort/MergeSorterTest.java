@@ -4,12 +4,12 @@ import org.junit.Test;
 
 /**
  */
-public class BubbleSorterTest extends SorterTest {
+public class MergeSorterTest extends SorterTest {
 	@Test
 	public void testRandom() {
-		BubbleSorter<Integer> bs = new BubbleSorter<Integer>();
+		MergeSorter<Integer> s = new MergeSorter<Integer>();
 		for (int i = 1; i < 100; i++) {
-			randomTest(bs, i);
+			randomTest(s, i);
 		}
 	}
 }

@@ -10,8 +10,8 @@ import java.util.List;
  * 
  *
  */
-public abstract class Sorter {
-	protected Comparator comparator;
+public abstract class Sorter<T> {
+	protected Comparator<T> comparator;
 	protected boolean ascend;
 	
 	public Sorter() {
@@ -22,11 +22,11 @@ public abstract class Sorter {
 		this(null, ascend);
 	}
 	
-	public Sorter(Comparator comparator) {
+	public Sorter(Comparator<T> comparator) {
 		this(comparator, true);
 	}
 	
-	public Sorter(Comparator comparator, boolean ascend) {
+	public Sorter(Comparator<T> comparator, boolean ascend) {
 		this.comparator = comparator;
 		this.ascend = ascend;
 	}
@@ -52,7 +52,7 @@ public abstract class Sorter {
 	 * @param from the index of the first element (inclusive) to be sorted
 	 * @param to the index of the last element (exclusive) to be sorted
 	 */
-	public abstract void sort(List<?> list, int from, int to);
+	public abstract void sort(List<T> list, int from, int to);
 
 	/**
 	 * Sorts the array
@@ -61,32 +61,36 @@ public abstract class Sorter {
 	 * @param from the index of the first element (inclusive) to be sorted
 	 * @param to the index of the last element (exclusive) to be sorted
 	 */
-	public <T> void sort(T[] array, int from, int to) {
+	public void sort(T[] array, int from, int to) {
 		sort(Arrays.asList(array), from, to);
 	}
 
-	public void sort(List<?> list) {
+	public void sort(List<T> list) {
 		sort(list, 0, list.size());
 	}
 
-	public <T> void sort(T[] array) {
+	public void sort(T[] array) {
 		sort(Arrays.asList(array), 0, array.length);
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected int compare(List list, int x, int y) {
-		Object a = list.get(x);
-		Object b = list.get(y);
+	protected int compare(T a, T b) {
 		if (comparator == null) {
 			return ascend ? ((Comparable)a).compareTo(b) : ((Comparable)b).compareTo(a);
 		}
-		else {
-			return comparator.compare(a, b);
-		}
+		return comparator.compare(a, b);
+	}
+
+	protected int compare(List<T> list, int x, int y) {
+		return compare(list.get(x), list.get(y));
 	}
 	
-	protected void swap(List<?> list, int x, int y) {
+	protected void swap(List<T> list, int x, int y) {
 		Collections.swap(list, x, y);
+	}
+
+	protected void move(List<T> list, int x, int y) {
+		list.add(y, list.remove(x));
 	}
 
 	/**
@@ -96,18 +100,17 @@ public abstract class Sorter {
 	 * @param desPos starting position in the destination data.
 	 * @param length the number of array elements to be copied.
 	 */
-	@SuppressWarnings("unchecked")
-	protected void copy(List src, int srcPos, List des, int desPos, int length) {
+	protected void copy(List<T> src, int srcPos, List<T> des, int desPos, int length) {
 		for (int i = 0; i < length; i++) {
 			des.set(desPos + i, src.get(srcPos + i));
 		}
 	}
 
-	public boolean verify(List<?> list) {
+	public boolean verify(List<T> list) {
 		return verify(list, 0, list.size());
 	}
 
-	public boolean verify(List<?> list, int from, int to) {
+	public boolean verify(List<T> list, int from, int to) {
 		for (int i = from; i < to; i++) {
 			for (int j = from; j < to; j++) {
 				if (i != j) {
@@ -121,11 +124,11 @@ public abstract class Sorter {
 		return true;
 	}
 
-	public <T> boolean verify(T[] array) {
+	public boolean verify(T[] array) {
 		return verify(array, 0, array.length);
 	}
 	
-	public <T> boolean verify(T[] array, int from, int to) {
+	public boolean verify(T[] array, int from, int to) {
 		return verify(Arrays.asList(array), from, to);
 	}
 }

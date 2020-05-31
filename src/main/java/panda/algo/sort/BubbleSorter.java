@@ -3,10 +3,10 @@ package panda.algo.sort;
 import java.util.List;
 
 /**
- * 
+ * compare times: n * (n - 1) / 2
  */
-public class BubbleSorter extends Sorter {
-	public void sort(List<?> list, int from, int to) {
+public class BubbleSorter<T> extends Sorter<T> {
+	public void sort(List<T> list, int from, int to) {
 		boolean change = true;
 		for (int i = to - 1; i > from && change; i--) {
 			change = false;
