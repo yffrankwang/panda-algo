@@ -36,7 +36,6 @@ public class FiveSorterTest {
 
 		MutableInt mi = new MutableInt();
 		FiveSorter<Integer> s = new FiveSorter<Integer>();
-		Permutater<Integer> p = new Permutater<Integer>(l);
 		IterHandler<Integer> ih = new IterHandler<Integer>() {
 			@Override
 			public boolean handle(List<Integer> list) {
@@ -47,6 +46,7 @@ public class FiveSorterTest {
 			}
 		};
 
-		p.permutate(ih);
+		Permutater<Integer> p = new Permutater<Integer>(l, ih);
+		p.permutate();
 	}
 }
