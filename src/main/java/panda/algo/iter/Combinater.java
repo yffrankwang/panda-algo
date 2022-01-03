@@ -60,18 +60,20 @@ public class Combinater<T> {
 	 * @return C(n, m)
 	 */
 	public static long count(int n, int m) {
-		if (m < 1) {
+		if (n < 1 || m < 1 || n < m) {
 			return 0;
 		}
 		
 		long count = 1;
-		for (int i = m + 1; i <= n; i++) {
-			count *= i;
+
+		int k = n - m;
+		if (k < m) {
+			k = m;
 		}
-		
-		int t = n - m;
-		for (int i = 2; i <= t; i++) {
-			count /= i;
+
+		for (int i = n; i > k; i--) {
+			count = count * i / (n - i + 1);
+			
 		}
 		return count;
 	}
@@ -80,7 +82,9 @@ public class Combinater<T> {
 	 * C(n, m)
 	 */
 	public void combinate(int m) {
-		if (m < 1) {
+		int n = org.size();
+		
+		if (n < 1 || m < 1 || n < m) {
 			return;
 		}
 
@@ -90,9 +94,11 @@ public class Combinater<T> {
 		else {
 			gen.clear();
 		}
+
 		for (int i = 0; i < m; i++) {
 			gen.add(null);
 		}
+	
 		combinate(org.size(), m);
 	}
 

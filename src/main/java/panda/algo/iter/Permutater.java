@@ -62,14 +62,13 @@ public class Permutater<T> {
 	 * @return P(n, m)
 	 */
 	public static long count(int n, int m) {
-		if (m < 1) {
+		if (n < 1 || m < 1 || n < m) {
 			return 0;
 		}
 		
-		m = (m >= n ? 2 : n - m + 1);
-
 		long count = 1;
-		for (int i = n; i >= m; i--) {
+		int k = n - m;
+		for (int i = n; i > k; i--) {
 			count *= i;
 		}
 		return count;
@@ -98,22 +97,23 @@ public class Permutater<T> {
 	}
 	
 	private boolean swap(int m, int n) {
-		if (m < n - 1) {
+		if (m >= n - 1) {
+			return ith.handle(gen);
+		}
+	
+		if (!swap(m + 1, n)) {
+			return false;
+		}
+
+		for (int i = m + 1; i < n; i++) {
+			Collections.swap(gen, m, i);
+
 			if (!swap(m + 1, n)) {
 				return false;
 			}
 
-			for (int i = m + 1; i < n; i++) {
-				Collections.swap(gen, m, i);
-
-				if (!swap(m + 1, n)) {
-					return false;
-				}
-
-				Collections.swap(gen, m, i);
-			}
-			return true;
-		} 
-		return ith.handle(gen);
+			Collections.swap(gen, m, i);
+		}
+		return true;
 	}
 }
