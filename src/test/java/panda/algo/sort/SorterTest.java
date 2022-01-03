@@ -27,7 +27,7 @@ public class SorterTest {
 		
 		List<Integer> a = new ArrayList<Integer>(); 
 		for (int i = 0; i < n; i++) {
-			a.add(r.nextInt());
+			a.add(r.nextInt(n));
 		}
 
 		sortAndVerify(s, a);
